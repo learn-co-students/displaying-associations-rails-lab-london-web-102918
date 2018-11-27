@@ -1,0 +1,14 @@
+<h1>Show Page</h1>
+
+<ul>
+  <h4>Artist name:</h4>
+  <%= @artist.name %>
+
+  <h4>Song title:</h4>
+  <% @artist.songs.each do |song| %>
+    <%= link_to song.title, song_path(song) %><br>
+  <% end %>
+
+  <h4>Song count:</h4>
+  <%= @artist.song_count %> <%= "song".pluralize(@artist.song_count) %>
+</ul>
